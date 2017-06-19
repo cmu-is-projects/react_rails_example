@@ -17,19 +17,19 @@ export default class Calendar extends React.Component {
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = { month: this.props.month };
+
   }
 
 
-
-
   render() {
+
     var rows = [];
     var count = 1;
     for (var i = 0; i < this.props.numweeks; i++){
       var cols = []
       for (var f = 0; f < 7; f++){
         if((count > this.props.first) && (count <= (parseInt(this.props.last) + parseInt(this.props.first)))) {
-          cols.push(<td key={count}><Day number= {count - this.props.first} users={this.props.users} appointments={this.props.appointments[count - this.props.first - 1]} /></td>)
+          cols.push(<td key={count}><Day date= {this.props.date} number= {count - this.props.first} users={this.props.users} appointments={this.props.appointments[count - this.props.first - 1]} /></td>)
         }else{
           cols.push(<td key={count}>_</td>)
         }

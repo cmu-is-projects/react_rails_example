@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
     end
     @month = Date.today.strftime("%B")
     @numweeks = (@last.to_i/7) + 1
-    @props = { appointments: @appointments, first: @first, last: @last, month: @month, numweeks: @numweeks, users: User.all }
+    @props = { appointments: @appointments, first: @first, last: @last, month: @month, numweeks: @numweeks, users: User.all, date: Date.today }
 
   end
 
