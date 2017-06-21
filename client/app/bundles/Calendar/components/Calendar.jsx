@@ -23,11 +23,13 @@ export default class Calendar extends React.Component {
 
   render() {
 
+    // takes in the number of weeks and first and last day and computes the calendar via a table
     var rows = [];
     var count = 1;
     for (var i = 0; i < this.props.numweeks; i++){
       var cols = []
       for (var f = 0; f < 7; f++){
+        // determines if to render the day elements of a blank
         if((count > this.props.first) && (count <= (parseInt(this.props.last) + parseInt(this.props.first)))) {
           cols.push(<td key={count}><Day date= {this.props.date} number= {count - this.props.first} users={this.props.users} appointments={this.props.appointments[count - this.props.first - 1]} /></td>)
         }else{
@@ -41,7 +43,7 @@ export default class Calendar extends React.Component {
     return (
       <div>
         <h1>
-          {this.state.month}!
+          {this.state.month}
         </h1>
         <hr />
 

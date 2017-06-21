@@ -3,15 +3,14 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   # GET /appointments.json
+  # this computes the current month and passes the variables in as props to the react component
   def index
     @appointments = []
     @first = Date.today.at_beginning_of_month.strftime("%w")
     @last = Date.today.at_end_of_month.strftime("%-d")
     (1..@last.to_i).step(1).each do |e|
-      a = Appointment.where("DATE(time) = ?", Date.new(2017, Date.today.strftime("%-m").to_i, e))
+      a = Appointment.where("DATE(time) = ?", Date.new(Date.today.strftime("%Y").to_i, Date.today.strftime("%-m").to_i, e))
       @appointments.push(a)
-      puts "kk"
-      puts a
     end
     @month = Date.today.strftime("%B")
     @numweeks = (@last.to_i/7) + 1

@@ -21,6 +21,7 @@ export default class Day extends React.Component {
 
   }
 
+  // handles the click to submit the user for tha day via ajax
   handleClick() { 
     var date = this.props.date.split("-");
     var name = this.refs.user.value; 
@@ -33,6 +34,7 @@ export default class Day extends React.Component {
           time: date[0].toString() + "-" + date[1].toString() + "-" + this.props.number.toString()
         } }, 
         success: (item) => { 
+          //upon success, this adds the new user to the array which populates the list
           var user = this.props.users[parseInt(name) - 1];
           this.setState({
             arr: this.state.arr.concat([<li>{user.firstname} {user.lastname}</li>])
@@ -42,6 +44,7 @@ export default class Day extends React.Component {
   }
 
   componentWillMount(){
+    // parses the prop to populate the list of users for the users for a date
     for(var f = 0; f < this.props.appointments.length; f++){
       var user = this.props.users[parseInt(this.props.appointments[f].user_id) - 1];
       this.setState({
@@ -52,7 +55,7 @@ export default class Day extends React.Component {
 
 
   render() {
-
+    // creates the select drop down
     var rows = [];
     for(var i = 0; i < this.props.users.length; i++){
       rows.push(<option key={i}value={this.props.users[i].id}>{this.props.users[i].firstname + " " + this.props.users[i].lastname}</option>);
