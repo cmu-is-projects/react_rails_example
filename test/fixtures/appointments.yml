@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  time: 2017-06-18 22:01:33
   user_id: 1
+  time: 2017-06-22 12:04:09
 
 two:
-  time: 2017-06-18 22:01:33
   user_id: 1
+  time: 2017-06-22 12:04:09

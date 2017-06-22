@@ -3,7 +3,6 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   # GET /appointments.json
-  # this computes the current month and passes the variables in as props to the react component
   def index
     @appointments = []
     @first = Date.today.at_beginning_of_month.strftime("%w")
@@ -14,7 +13,6 @@ class AppointmentsController < ApplicationController
     end
     @month = Date.today.strftime("%B")
     @numweeks = (@last.to_i/7) + 1
-    @props = { appointments: @appointments, first: @first, last: @last, month: @month, numweeks: @numweeks, users: User.all, date: Date.today }
 
   end
 
@@ -80,6 +78,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:time, :user_id)
+      params.require(:appointment).permit(:user_id, :time)
     end
 end

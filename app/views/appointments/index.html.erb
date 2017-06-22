@@ -1,1 +1,1 @@
-<%= react_component("Calendar", props: @props, prerender: false) %>
+<%= react_component("Calendar", {  appointments: @appointments, first: @first, last: @last, month: @month, numweeks: @numweeks, users: User.all, date: Date.today }) %>

@@ -1,9 +1,5 @@
 {
-  "scripts": {
-    "postinstall": "cd client && yarn install"
-  },
-
-  "name": "reactrailstest",
+  "name": "reactrails",
   "private": true,
   "dependencies": {}
 }

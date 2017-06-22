@@ -1,11 +1,4 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Day from '../components/Day';
-
-export default class Calendar extends React.Component {
-  static propTypes = {
-    month: PropTypes.string.isRequired, // this is passed from the Rails view
-  };
+class Calendar extends React.Component {
 
   /**
    * @param props - Comes from your rails view.

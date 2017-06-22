@@ -1,12 +1,4 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-
-
-
-export default class Day extends React.Component {
-  static propTypes = {
-
-  };
+class Day extends React.Component {
 
   /**
    * @param props - Comes from your rails view.
@@ -65,7 +57,7 @@ export default class Day extends React.Component {
 
 
     return (
-      <div class="day">
+      <div className="day">
         <h4 ref='number'>{this.props.number}</h4>
         <ul ref='userlist'>
           {this.state.arr}
