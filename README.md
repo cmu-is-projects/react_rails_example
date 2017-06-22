@@ -7,4 +7,5 @@
 * the .jsx files are located in app/assets/javascripts/components
 * reference these scrips in the views <%= react_component("Comments.NewForm", {post_id: @post.id}) %>
 * had to remove server side rendering: app/assets/javascripts/server_rendering.js (deleted contents)
-* added jquery
+* added jquery to make the ajax work
+* author jeremy lee (jalee)
